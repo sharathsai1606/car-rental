@@ -212,7 +212,7 @@ const BookCar = () => {
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
                   <div>
-                    <p className="text-2xl font-bold">₹{car.pricePerHour}</p>
+                    <p className="text-2xl font-bold">${car.pricePerHour}</p>
                     <p className="text-sm text-gray-600">per hour</p>
                   </div>
                   <div className="flex items-center space-x-2">
@@ -291,7 +291,7 @@ const BookCar = () => {
                     checked={bookingData.needDriver}
                     onCheckedChange={(checked) => handleInputChange("needDriver", checked)}
                   />
-                  <Label htmlFor="needDriver">Need a driver? (+₹400/hour)</Label>
+                  <Label htmlFor="needDriver">Need a driver? (+$400/hour)</Label>
                 </div>
 
                 {bookingData.needDriver && (
@@ -310,7 +310,7 @@ const BookCar = () => {
                 <div className="border-t pt-4">
                   <div className="flex justify-between items-center mb-4">
                     <span className="text-lg font-semibold">Total Amount:</span>
-                    <span className="text-2xl font-bold">₹{totalAmount}</span>
+                    <span className="text-2xl font-bold">${totalAmount}</span>
                   </div>
                   <Button type="submit" className="w-full" disabled={isLoading || isUnavailable}>
                     {isLoading ? "Processing..." : "Confirm Booking"}

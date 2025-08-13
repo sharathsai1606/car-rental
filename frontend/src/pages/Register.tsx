@@ -47,7 +47,8 @@ const Register = () => {
         formData.name,
         formData.email,
         formData.password,
-        'user'
+        'user',
+        formData.phone,
       );
       
       localStorage.setItem("user", JSON.stringify(response.user));

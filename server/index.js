@@ -121,20 +121,27 @@ app.post("/api/auth/login", async (req, res) => {
 
 app.post("/api/auth/register", async (req, res) => {
   try {
-    const { name, email, password, role = "user" } = req.body;
+    const { name, email, password, role: reqRole, phone } = req.body;
 
+    // Force default role to 'user' unless explicitly 'admin'
+    const role = reqRole === "admin" ? "admin" : "user";
+
+    // Check if user already exists
     const existingUser = await User.findOne({ email });
     if (existingUser) {
       return res.status(400).json({ message: "User already exists" });
     }
 
+    // Hash password
     const hashedPassword = await bcrypt.hash(password, 10);
 
+    // Create and save user
     const user = new User({
       name,
       email,
       password: hashedPassword,
       role,
+      phone: phone || "", // Ensure phone is stored, even if empty
     });
 
     await user.save();
@@ -145,12 +152,16 @@ app.post("/api/auth/register", async (req, res) => {
         name: user.name,
         email: user.email,
         role: user.role,
+        phone: user.phone,
+        status: user.status,
       },
     });
   } catch (error) {
+    console.error("Error during registration:", error);
     res.status(500).json({ message: error.message });
   }
 });
+
 
 // Car routes
 app.get("/api/cars", async (req, res) => {

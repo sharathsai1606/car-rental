@@ -212,7 +212,7 @@ const BookingManagement = ({ onStatsUpdate }) => {
                 </div>
                 <div>
                   <p className="text-sm text-gray-600">Total Amount</p>
-                  <p className="font-semibold text-green-600">₹{booking.totalAmount}</p>
+                  <p className="font-semibold text-green-600">${booking.totalAmount}</p>
                   {booking.needDriver && (
                     <p className="text-xs text-gray-500">Includes driver service</p>
                   )}

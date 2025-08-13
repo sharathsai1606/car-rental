@@ -160,7 +160,7 @@ const Cars = () => {
             <CardContent>
               <div className="flex justify-between items-center">
                 <div>
-                  <p className="text-2xl font-bold">₹{car.pricePerHour}</p>
+                  <p className="text-2xl font-bold">${car.pricePerHour}</p>
                   <p className="text-sm text-gray-600">per hour</p>
                 </div>
                 {user ? (

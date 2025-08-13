@@ -129,7 +129,7 @@ const AdminAnalytics = () => {
             <DollarSign className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">₹{currentMonth?.revenue || 0}</div>
+            <div className="text-2xl font-bold">${currentMonth?.revenue || 0}</div>
             <div className="flex items-center text-xs text-muted-foreground">
               {revenueGrowth >= 0 ? (
                 <TrendingUp className="h-3 w-3 mr-1 text-green-500" />
@@ -177,7 +177,7 @@ const AdminAnalytics = () => {
               {analytics.topCars[0]?.name || "N/A"}
             </div>
             <p className="text-xs text-muted-foreground">
-              ₹{analytics.topCars[0]?.revenue || 0} revenue
+              ${analytics.topCars[0]?.revenue || 0} revenue
             </p>
           </CardContent>
         </Card>
@@ -197,7 +197,7 @@ const AdminAnalytics = () => {
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="month" />
                 <YAxis />
-                <Tooltip formatter={(value) => [`₹${value}`, 'Revenue']} />
+                <Tooltip formatter={(value) => [`$${value}`, 'Revenue']} />
                 <Line type="monotone" dataKey="revenue" stroke="#0088FE" strokeWidth={2} />
               </LineChart>
             </ResponsiveContainer>
@@ -290,7 +290,7 @@ const AdminAnalytics = () => {
                   </div>
                 </div>
                 <div className="text-right">
-                  <p className="font-semibold text-green-600">₹{car.revenue}</p>
+                  <p className="font-semibold text-green-600">${car.revenue}</p>
                   <p className="text-sm text-gray-600">{car.utilization}% utilized</p>
                 </div>
               </div>

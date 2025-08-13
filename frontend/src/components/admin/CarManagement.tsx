@@ -241,7 +241,7 @@ const CarManagement = ({ onStatsUpdate }) => {
               
               <div className="grid grid-cols-3 gap-4">
                 <div>
-                  <Label htmlFor="pricePerHour">Price/Hour (₹)</Label>
+                  <Label htmlFor="pricePerHour">Price/Hour ($)</Label>
                   <Input
                     id="pricePerHour"
                     type="number"
@@ -359,7 +359,7 @@ const CarManagement = ({ onStatsUpdate }) => {
                 <div className="flex justify-between">
                   <span>Price:</span>
                   <div className="text-right">
-                    <p className="text-lg font-bold">₹{car.pricePerHour}</p>
+                    <p className="text-lg font-bold">${car.pricePerHour}</p>
                     <p className="text-sm text-gray-600">per hour</p>
                   </div>
                 </div>
@@ -443,7 +443,7 @@ const CarManagement = ({ onStatsUpdate }) => {
             
             <div className="grid grid-cols-3 gap-4">
               <div>
-                <Label htmlFor="edit-pricePerHour">Price/Hour (₹)</Label>
+                <Label htmlFor="edit-pricePerHour">Price/Hour ($)</Label>
                 <Input
                   id="edit-pricePerHour"
                   type="number"

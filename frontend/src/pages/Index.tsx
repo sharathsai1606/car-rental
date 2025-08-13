@@ -16,7 +16,7 @@ const Index = () => {
       id: 1,
       name: "Toyota Camry",
       image: "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=400",
-      pricePerHour: 2500,
+      pricePerHour: 28,
       seats: 5,
       transmission: "Automatic",
       rating: 4.8
@@ -25,7 +25,7 @@ const Index = () => {
       id: 2,
       name: "BMW X5",
       image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=400",
-      pricePerHour: 4500,
+      pricePerHour: 55,
       seats: 7,
       transmission: "Automatic",
       rating: 4.9
@@ -33,8 +33,8 @@ const Index = () => {
     {
       id: 3,
       name: "Mercedes C-Class",
-      image: "https://images.unsplash.com/photo-1563720223185-11003d516935?w=400",
-      pricePerHour: 3500,
+      image: "https://m.atcdn.co.uk/vms/media/%7Bresize%7D/458d8f994ab6408a8061f6a22f291ffb.jpg",
+      pricePerHour: 40,
       seats: 5,
       transmission: "Automatic",
       rating: 4.7
@@ -75,7 +75,7 @@ const Index = () => {
       <section className="relative py-20 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-5xl font-bold text-gray-900 mb-6">
-            Rent the Perfect Car for Your Journey
+            Rent the Perfect Car for Your Journey with Unlimited Miles
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             Choose from our wide selection of premium vehicles. Affordable rates, reliable service, and flexible booking options.
@@ -158,7 +158,7 @@ const Index = () => {
                 <CardContent>
                   <div className="flex justify-between items-center">
                     <div>
-                      <span className="text-2xl font-bold text-blue-600">₹{car.pricePerHour}</span>
+                      <span className="text-2xl font-bold text-blue-600">${car.pricePerHour}</span>
                       <span className="text-gray-600">/hour</span>
                     </div>
                     <Link to="/login">

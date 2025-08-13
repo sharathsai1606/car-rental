@@ -201,7 +201,7 @@ const Dashboard = () => {
                     
                     <div className="flex justify-between items-center mt-4 pt-3 border-t">
                       <span className="font-semibold text-lg text-blue-600">
-                        ₹{booking.totalAmount}
+                        ${booking.totalAmount}
                       </span>
                       <Button variant="outline" size="sm">
                         <Eye className="h-4 w-4 mr-2" />

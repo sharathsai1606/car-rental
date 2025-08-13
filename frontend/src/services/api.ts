@@ -41,6 +41,7 @@ interface RegisterData {
   email: string;
   password: string;
   role?: string;
+  phone?: string; 
 }
 
 // Auth API
@@ -53,8 +54,8 @@ export const authAPI = {
     });
   },
   
-  register: async (name: string, email: string, password: string, role = 'user') => {
-    const data: RegisterData = { name, email, password, role };
+  register: async (name: string, email: string, password: string, role = 'user', phone: string) => {
+    const data: RegisterData = { name, email, password, role, phone};
     return apiRequest('/auth/register', {
       method: 'POST',
       body: JSON.stringify(data),
